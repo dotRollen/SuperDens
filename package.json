@@ -1,0 +1,22 @@
+{
+  "name": "projectsuperdens",
+  "version": "1.0.0",
+  "description": "Marvel Super Heroes DB site",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuperDens/ProjectSuperDens.git"
+  },
+  "author": "TeamSEND",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuperDens/ProjectSuperDens/issues"
+  },
+  "homepage": "https://github.com/SuperDens/ProjectSuperDens#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
