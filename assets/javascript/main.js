@@ -1,3 +1,4 @@
+
 $("form").submit(function (event) {
     event.preventDefault();
     userInput = $("#user-input").val().trim();
@@ -5,3 +6,4 @@ $("form").submit(function (event) {
     superAPI.callAPI(userInput);
     marvelAPI.callAPI(userInput);
 });
+
