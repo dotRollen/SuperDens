@@ -4,6 +4,8 @@ $("form").submit(function (event) {
     userInput = $("#user-input").val().trim();
     console.log(userInput);
     superAPI.callAPI(userInput);
-    marvelAPI.callAPI(userInput);
+    var marvelResponse = marvelAPI.callAPI('characters',
+                                         marvelAPI.params.characters);
+    console.log(marvelReponse);
 });
 
