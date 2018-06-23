@@ -21,3 +21,10 @@ $(function (){
         throw err;
     });
 })
+
+// function for superheroapi
+var heroSearch = "Batman" //just an exampe search
+    var superAPI = 'http://superheroapi.com/api/10160533766455290/search/' + heroSearch  + '/'
+    $.getJSON(superAPI).then(function(response) {
+      console.log(response);
+    });
