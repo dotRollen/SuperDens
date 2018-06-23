@@ -10,6 +10,7 @@ const superAPI = {
         // function for superheroapi
         var superAPI = 'http://superheroapi.com/api/10160533766455290/search/' + superInput + '/';
         $.getJSON(superAPI).then(function (response) {
+            if (response.results[0].biography.publisher ==  "Marvel Comics");
             console.log(response);
         });
     },
