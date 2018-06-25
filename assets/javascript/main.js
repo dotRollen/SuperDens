@@ -8,4 +8,9 @@ $("form").submit(function (event) {
                                          marvelAPI.params.characters);
     console.log(marvelResponse);
 });
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, 'left');
+  });
+  
 
