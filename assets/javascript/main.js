@@ -4,6 +4,7 @@ $("form").submit(function (event) {
     userInput = $("#search").val().trim();
     console.log(userInput);
     superAPI.callAPI(userInput);
+
     var marvelResponse = marvelAPI.callAPI('characters',
                                          marvelAPI.params.characters);
     console.log(marvelResponse);
@@ -24,3 +25,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     });                
     });
+
