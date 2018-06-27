@@ -16,40 +16,42 @@ const superAPI = {
                     var superHero =  {
                         name: response.results[i].name,
                         realName : response.results[i].biography["full-name"],
+                        birthplace: response.results[i].biography["place-of-birth"],
+                        alignment: response.results[i].biography.alignment,
                         Int : response.results[i].powerstats.intelligence,
                         Pwr: response.results[i].powerstats.power,
                         Spd: response.results[i].powerstats.speed,
                         Cbt: response.results[i].powerstats.combat
                     };
-                    console.log(superHero.Int)
+                    
+                    console.log(superHero)
                     var superDiv = $("<div>");
                     var superImg = $("<img>");
                     var superBio = $("<p>");
-                    superImg.attr("src", response.results[i].image.url);
-                    superBio.append("Name: " + superHero.name + "<br>" + "Real Name: " + superHero.realName)
+                    superBio.append("Name: " + superHero.name + "<br>Real Name: " + superHero.realName + "<br> Alignment: " + superHero.alignment + "<br> Stats: ")
                     //if conditionals for each stat starting with power
                     if (superHero.Int == "null") {
-                        superBio.append("<br> Power: Data Unavailable.")
+                        superBio.append("Power = Data Unavailable")
                     } else {
-                        superBio.append("<br> Power: " + superHero.Pwr)
+                        superBio.append("Power = " + superHero.Pwr)
                     };
                     //speed
                     if (superHero.Spd == "null") {
-                        superBio.append("<br> Speed: Data Unavailable.")
+                        superBio.append(", Speed = Data Unavailable.")
                     } else {
-                        superBio.append("<br> Speed: " + superHero.Spd)
+                        superBio.append(", Speed = " + superHero.Spd)
                     };
                     //Intelligence
                     if (superHero.Int == "null") {
-                        superBio.append("<br> Intelligence: Data Unavailable.")
+                        superBio.append(", Intelligence = Data Unavailable.")
                     } else {
-                        superBio.append("<br> Intelligence: " + superHero.Int)
+                        superBio.append(", Intelligence = " + superHero.Int)
                     };
                     //Combat Ability
                     if (superHero.Int == "null") {
-                        superBio.append("<br> Combat Ability: Data Unavailable.")
+                        superBio.append(", Combat Ability = Data Unavailable.")
                     } else {
-                        superBio.append("<br> Combat Ability: " + superHero.Cbt)
+                        superBio.append(", Combat Ability = " + superHero.Cbt)
                     };
                     
                     //appends the superhero API data
