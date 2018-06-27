@@ -2,12 +2,5 @@
 
 SuperDens is a Marvel Super Heroes database, where users can get the latest information on their favourite super heroes.
 
-## Prequisites
-Node.JS
-Express.JS
-
-## Deploying development environment
-
-1. Change directories to `/ProjectSuperDens`
-2. Install all package dependencies after install Node.js with `npm install --save`.
-3. Launch the HTTP server with `node app.js`
+## Dev Environment Prequisites
+Visual Studio Code - Live Server addon, press go live to start an http server in visual studio. This will allow the APIs to make the proper calls using a local domain name.

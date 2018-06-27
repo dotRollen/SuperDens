@@ -10,6 +10,7 @@ const superAPI = {
         // function for superheroapi
         var superAPI = 'http://superheroapi.com/api/10160533766455290/search/' + superInput + '/';
         $.getJSON(superAPI).then(function (response) {
+
             for (i = 0; i < response.results.length; i++) {
                 if (response.results[i].biography.publisher == "Marvel Comics" || response.results[i].biography.publisher == "Deadpool" || response.results[i].biography.publisher == "Evil Deadpool" || response.results[i].biography.publisher == "Rune King Thor") {
                     console.log(response);
@@ -65,6 +66,7 @@ const superAPI = {
                 };
             };
             //{
+
 
 
 

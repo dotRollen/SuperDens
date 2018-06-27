@@ -1,24 +1,104 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SuperDens - Marvel Super Hero DB</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="projectSEND.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 </head>
-<body>
 
-        <form>
-                <input type="text" id="user-input">
-                <input type="submit" id="submit">
-        </form>
 
-    <div id="test-print">
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<body background="assets/images/pow-star.png">
+    <nav>
+        <div class="black nav-wrapper">
+            <div class="row">
+                <div class="col s10">
+                    <form>
+                        <div class="input-field">
+                            <input id="search" type="search" />
+                            <label for="search">
+                                <i class="material-icons">search</i>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="col s2">
+                    <ul class="right">
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">close</i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <ul id="slide-out" class="sidenav sidenav-fixed">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="http://images.all-free-download.com/images/graphiclarge/super_nova_background_557746.jpg">
+                </div>
+                <a href="#user">
+                    <img class="circle" src="https://millscommunitysupport.files.wordpress.com/2013/08/generic-head-silhouette.jpg">
+                </a>
+                <a href="#name">
+                    <span class="black-text name">Name Here </span>
+                </a>
+                <a href="#email">
+                    <span class="black-text email">E-Mail Here</span>
+                </a>
+            </div>
+        </li>
+        <li>
+            <a>
+                <i class="material-icons">DASHBOARD</i>
+            </a>
+        </li>
+        <li>
+            <a href="#!">Second Link</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li>
+            <a class="subheader">Subheader</a>
+        </li>
+        <li>
+            <button class="blue waves-effect waves-teal btn-flat" type="submit" name="action">Logout
+                <i class="material-icons right">exit_to_app</i>
+            </button>
+        </li>
+
+        <li>
+            <img src="assets/images/projectlogo.png" height="250" width="300" alt="logo">
+            <!-- <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/SupermanRoss.png/250px-SupermanRoss.png">  -->
+
+        </li>
+    </ul>
+    </a>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+  
     <script src="assets/javascript/super.js"></script>
     <script src="assets/javascript/marvel.js"></script>
     <script src="assets/javascript/main.js"></script>
+
+
 </body>
+
 </html>
