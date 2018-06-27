@@ -1,46 +1,30 @@
 const marvelAPI = {
     url: 'https://gateway.marvel.com/v1/public/',
-    params: {
-        characters: {
-            apikey: 'db60b2d90bd12165a42c7f7d1b0417ec',
-            name: 'spider-man',
-            // nameStartsWith: '',
-            // modifiedSince: '', //Date Only
-            // comics: '', //Number only
-            // series: '', //Number only
-            // events: '', //Number only
-            // stories: '', //Number only
-            // orderBy: '', //name, modified, -name, -modified
-            // limit: '', //Number only
-            // offset: '', //Number only
-        },
-        creators: {},
-        comics: {},
-        events: {},
-        stories: {},
-        series: {},
-    },
-    callAPI: function (directory, obj) {
-        $.getJSON(marvelAPI.url + directory, obj)
-            .done(function(response) {
-                var results = response;
-                return results;
-        }).fail(function(err) {
+    apikey: 'db60b2d90bd12165a42c7f7d1b0417ec',
+    getData: function (directory, params) {
+        var url = this.url;
+        url += directory + params;
+        return $.ajax({
+            method: 'GET',
+            url: url,
+        })
+        .fail(function(err) {
             throw err;
         });  
     },
+    setAvatar: function (params) {
+        var directory = 'characters?';
+        $.when(this.getData(directory, params))
+        .done(function(response){
+            var thumbnail = response.data.results[0].thumbnail;
+            var photo = thumbnail.path + '.' + thumbnail.extension; 
+            $("#hero-avatar").html('<img src="' + photo + '">');
+        });
+    },
+    setBio: function () {
+
+    },
+    postComics: function () {
+        
+    }
 }
-
-// var results = response.data.results;
-// var resultsLen = results.length;
-// var output = '<ul>'; 
-
-// for(var i=0; i<resultsLen; i++){
-// if(results[i].images.length > 0) {
-//     var imgPath = results[i].images[0].path + '/standard_xlarge.' + results[i].images[0].extension;
-//     output += '<li><img src="' + imgPath + '"><br>'+results[i].title+'</li>';
-// }
-// }  
-// output += '</ul>'
-// $('#results').append(output);
-
