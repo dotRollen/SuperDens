@@ -23,6 +23,33 @@ input[type=text]:focus {
   font-family: 'Shrikhand', cursive;
 }
 
+#bio {
+  margin-left: 700px; 
+  width: 500px; 
+  height: 500px; 
+}
+
+.card-title {
+  background-color: black;
+  height: 70px;
+}
+
+.avatar-stats{
+ 
+ 
+}
+
+h3{
+  text-align: center; 
+}
+
+.collapsible{
+ margin-top: 400px;
+} 
+
+.collapsible-body{
+  height: 500px; 
+}
 /* style the container */
 
 .logo{
