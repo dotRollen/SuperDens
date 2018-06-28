@@ -25,6 +25,9 @@ input[type=text]:focus {
 
 /* style the container */
 
+.logo{
+  margin-left: 550px;
+}
 .container {
   position: relative;
   border-radius: 5px;
