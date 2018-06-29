@@ -26,8 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });                
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.collapsible');
-        var instances = M.Collapsible.init(elems, 'accordion');
-      });
-    
+//Materilize sidenav CSS
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+});
+
+//Materialize collapsible Javascript
+$(document).ready(function(){
+    $('.collapsible').collapsible();
+});
