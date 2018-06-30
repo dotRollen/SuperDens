@@ -9,10 +9,11 @@
       }
     }
     h3{
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Open Sans', sans-serif !important;
+      color: blue; 
   }
 
-  .card-title{
-    color: black; 
-
+  li{
+    font-family: 'Open Sans', sans-serif !important;
+    color: red; 
   }
