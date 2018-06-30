@@ -1,113 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>particles.js demo</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
-    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
-    <!-- <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script> -->
-    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
-    <!-- <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-messaging.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-functions.js"></script> --> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SuperDens - Marvel Super Hero DB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
 </head>
-
-<body id="particles-js">
-    
-    <nav class="transparent">
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <p class="btn-lg pulse transparent zindex-5">
-                    <h3 style="opacity: 0.7; color: rgb(4, 79, 102);">Super DenS</h3>
-                </p>
-            </a>
-            <ul class="right">
-                <li>
-                    <a id="returnHero" href="#modal2" class="btn waves-effect waves-light blue-grey darken-4 modal-trigger white-text">Returning Hero</a>
-                </li>
-            </ul>
-            <ul class="left">
-                <li>
-                    <a id="createHero" href="#modal3" class="btn waves-effect waves-light blue-grey darken-4 white-text modal-trigger">Create Hero</a>
-                </li>
-            </ul>
-            <ul class="right">
-                <li>
-                    <a id="modalLoadTrigger" href="#modalLoad" class="btn waves-effect waves-light blue-grey darken-4 white-text modal-trigger">Load Info</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- //MODAL 2 Exsiting USER -->
-    <div class="modal" id="modal2">
+<body>
+<div id="particles-js"></div>
+   <!--STARTING TOP NAVBAR-->
+   <header>
+    <div class="navbar-fixed">
+        <nav class="grey darken-4 top-nav" role="navigation">
+            <!--Search Form-->
+            <div class="nav-wrapper container">
+                <a id="logo-container" href="#" class="brand-logo">SuperDens</a>
+                <ul class="right hide-on-med-and-down">
+                    <li id="signInBtn"></li>
+                </ul>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </div>
+            <!--End Search Form-->
+        </nav>
+    </div>
+    <!--ENDING TOP NAVBAR-->
+    <!--STARTING TOP SIDE NAVBAR-->
+        <ul id="slide-out" class="sidenav">
+            <li><div class="user-view">
+              <div class="background">
+                <img src="assets/images/userbg.gif">
+              </div>
+              <a href="#user"><img class="circle" src="assets/images/user.jpg"></a>
+              <a href="#name"><span class="white-text name">John Doe</span></a>
+              <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            </div></li>
+            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+            <li><a href="#!">Second Link</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="subheader">Subheader</a></li>
+            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        </ul>
+        <!--ENDING TOP SIDE NAVBAR-->
+    </header>
+    <main><div class="container">
+            <div class="section">
+                <div class="row">
+                    <div class="col s6 m6 avatar-stats">
+                        <div class="card-image circle card">
+                            
+                                <img src="https://i.pinimg.com/originals/cd/30/71/cd3071df226c7c21345b7bf91bdf648c.jpg" class="circle responsive-img">
+                                <span class="card-title" id="hero">Avatar</span>
+                            
+                            <div class="card-content">
+                                <h3>
+                                    STATS
+                                </h3>
+                                <ul>
+                                    <li id="str">STR: <span id="str-number">100</span></li>
+                                    <li id-"comb">COMBAT: <span id="comb-number">100</span>
+                                    <li id="speed">SPEED: <span id="speed-number">100</span></li>
+                                    <li id="int">Intelligence: <span id="int-number">100</span></li>
+                                    <li id="real-name">Real name: <span id="name">John Doe</span></li>
+                                    <li id="birth-place">Birth place: <span id="place">New Jersey</span></li>
+                                    <li id="alignment">Alignment: <span id="result">Good</span></li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="col s6 m6">
+                        <div class="card">
+                            <div class="card-image">
+                            </div>
+                            <div class="card-content">
+                                <h3>
+                                    BIO
+                                </h3>
+                                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because
+                                        I require little markup to use effectively.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <ul class="collapsible">
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">filter_drama</i>Comic Appearances</div>
+                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div></main>
+    <!-- End content -->
+    <!-- Modals -->
+    <!-- //MODAL 1 USER LOGIN -->
+    <div class="modal" id="modal1">
         <div class="modal-content">
-            <h5>Email</h5>
-            <input type="email" placeholder="email" id="email">
-            <h5>password</h5>
-            <input type="password" placeholder="password" id="pass">
+            <h4>Signin</h4>
+            <div class="input-field col s12">
+                <input type="email" id="email" class="autocomplete">
+                <label for="autocomplete-input">Email</label>
+            </div>
+            <div class="input-field col s12">
+                <input type="password" id="pass" class="autocomplete">
+                <label for="autocomplete-input">Password</label>
+            </div>
         </div>
-        <div class="modal-fixed-footer grey">
-            <span class="btn waves-effect waves-light" type="submit" name="action" id="submitBtn">
-                <h5>submit</h5>
-            </span>
-        </div>
-    </div>
-
-
-    <!-- //MODAL 3 NEW USER SIGN UP  -->
-    <div class="modal" id="modal3">
-        <div class="modal-content ">
-            <h5>Email</h5>
-            <input type="email" placeholder="email" id="email1">
-            <h5>password</h5>
-            <input type="password" placeholder="password" id="pass1">
-            <h5>Hero Name</h5>
-            <input type="text" placeholder="Hero Name" id="hero">
-            <h5>World Of Birth</h5>
-            <input type="text" placeholder="Birth World" id="world">
-        </div>
-        <div class="modal-fixed-footer">
-            <span class="btn waves-effect waves-light" type="submit" name="action" id="submitBtn2">
-                <h5>submit</h5>
-            </span>
+        <div class="modal-footer">
+            <a href="#!" class="left btn waves-effect waves-light" id="submitBtn">Submit</a>
+            <a href="#!" class="btn waves-effect waves-light teal darken-4" id="registerBtn">Register</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
     </div>
-
-    <!-- //LOAD DATA FUNCTION  -->
-    <div class="modal" id="modalLoad">
-        <div class="modal-content">
-            <h5>Email</h5>
-            <input type="text" placeholder="email" id="loadUser">
-        </div>
-        <div class="modal-fixed-footer grey">
-            <span class="btn waves-effect waves-light" type="submit" name="action" id="userLoadBtn">
-                <h5>Get USER INFO</h5>
-            </span>
-        </div>
-    </div>
-
-
-    <footer></footer>
-
-      
-    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <!-- stats.js lib -->
-    <!-- <script src="http://threejs.org/examples/js/libs/stats.min.js"></script> -->
-    <script src="assets/javascript/firebase.js"></script>
-    <script src="assets/javascript/particle.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="assets/javascript/firebase.js"></script>
+<script src="assets/javascript/superAPI.js"></script>
+<script src="assets/javascript/main.js"></script>
 </body>
-
 </html>

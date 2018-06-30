@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>particles.js demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body id="particles-js">
+    
+    <nav class="transparent">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p class="btn-lg pulse transparent zindex-5">
+                    <h3 style="opacity: 0.7; color: rgb(4, 79, 102);">Super DenS</h3>
+                </p>
+            </a>
+            <ul class="right">
+                <li>
+                    <a id="returnHero" href="#modal2" class="btn waves-effect waves-light blue-grey darken-4 modal-trigger white-text">Returning Hero</a>
+                </li>
+            </ul>
+            <ul class="left">
+                <li>
+                    <a id="createHero" href="#modal3" class="btn waves-effect waves-light blue-grey darken-4 white-text modal-trigger">Create Hero</a>
+                </li>
+            </ul>
+            <ul class="right">
+                <li>
+                    <a id="modalLoadTrigger" href="#modalLoad" class="btn waves-effect waves-light blue-grey darken-4 white-text modal-trigger">Load Info</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- //MODAL 3 NEW USER SIGN UP  -->
+    <div class="modal" id="modal3">
+        <div class="modal-content ">
+            <h5>Email</h5>
+            <input type="email" placeholder="email" id="email1">
+            <h5>password</h5>
+            <input type="password" placeholder="password" id="pass1">
+            <h5>Hero Name</h5>
+            <input type="text" placeholder="Hero Name" id="hero">
+            <h5>World Of Birth</h5>
+            <input type="text" placeholder="Birth World" id="world">
+        </div>
+        <div class="modal-fixed-footer">
+            <span class="btn waves-effect waves-light" type="submit" name="action" id="submitBtn2">
+                <h5>submit</h5>
+            </span>
+        </div>
+    </div>
+
+    <!-- //LOAD DATA FUNCTION  -->
+    <div class="modal" id="modalLoad">
+        <div class="modal-content">
+            <h5>Email</h5>
+            <input type="text" placeholder="email" id="loadUser">
+        </div>
+        <div class="modal-fixed-footer grey">
+            <span class="btn waves-effect waves-light" type="submit" name="action" id="userLoadBtn">
+                <h5>Get USER INFO</h5>
+            </span>
+        </div>
+    </div>
+
+
+    <footer></footer>
+
+      
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!-- stats.js lib -->
+    <!-- <script src="http://threejs.org/examples/js/libs/stats.min.js"></script> -->
+    <script src="assets/javascript/firebase.js"></script>
+    <script src="assets/javascript/particle.js"></script>
+</body>
+
+</html>
