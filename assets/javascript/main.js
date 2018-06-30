@@ -3,7 +3,7 @@ $("form").submit(function (event) {
     event.preventDefault();
     userInput = $("#search").val().trim();
     console.log(userInput);
-    // superAPI.callAPI(userInput);
+    superAPI.callAPI(userInput);
 
     var params = $.param({
         apikey: marvelAPI.apikey,

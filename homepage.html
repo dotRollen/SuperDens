@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SuperDens - Marvel Super Hero DB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
+</head>
+<body background="assets/images/pow-star.png">
+    <!--STARTING TOP NAVBAR-->
+    <header>
+        <nav class="grey darken-4 top-nav" role="navigation">
+            <!--Search Form-->
+            <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">SuperDens</a>
+                <form class="right">
+                    <div class="input-field">
+                        <input id="search" type="search" required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </div>
+            <!--End Search Form-->
+        </nav>
+    <!--ENDING TOP NAVBAR-->
+    <!--STARTING TOP SIDE NAVBAR-->
+        <ul id="slide-out" class="sidenav sidenav-fixed">
+            <li><div class="user-view">
+              <div class="background">
+                <img src="assets/images/userbg.gif">
+              </div>
+              <a href="#user"><img class="circle" src="assets/images/user.jpg"></a>
+              <a href="#name"><span class="white-text name">John Doe</span></a>
+              <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            </div></li>
+            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+            <li><a href="#!">Second Link</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="subheader">Subheader</a></li>
+            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        </ul>
+        <!--ENDING TOP SIDE NAVBAR-->
+    </header>
+    <main><div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s6 m6 avatar-stats">
+                <div class="card-image circle card">
+                    
+                        <img src="https://icdn3.digitaltrends.com/image/spider-man-front-image.jpg?ver=1" class="circle responsive-img">
+                        <span class="card-title" id="hero">Avatar</span>
+                    
+                    <div class="card-content">
+                        <h3>
+                            STATS
+                        </h3>
+                        <ul>
+                            <li id="str">STR: <span id="str-number">100</span></li>
+                            <li id-"comb">COMBAT: <span id="comb-number">100</span>
+                            <li id="speed">SPEED: <span id="speed-number">100</span></li>
+                            <li id="int">Intelligence: <span id="int-number">100</span></li>
+                            <li id="real-name">Real name: <span id="name">John Doe</span></li>
+                            <li id="birth-place">Birth place: <span id="place">New Jersey</span></li>
+                            <li id="alignment">Alignment: <span id="specific-side">Good</span></li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+            <div  class="col s6 m6">
+                <div class="card">
+                    <div class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <h3>
+                            BIO
+                        </h3>
+                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because
+                                I require little markup to use effectively.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12">
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">filter_drama</i>Comic Appearances</div>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div></main>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+<script src="assets/javascript/super.js"></script>
+<script src="assets/javascript/marvel.js"></script>
+<script src="assets/javascript/firebase.js"></script>
+<script src="assets/javascript/particle.js"></script>
+<script src="assets/javascript/main.js"></script>
+</body>
+</html>
