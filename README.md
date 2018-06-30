@@ -1,6 +1,8 @@
-# ProjectSEND
+# Project SuperDens
 
-SuperDens is a Marvel Super Heroes database, where users can get the latest information on their favourite super heroes. This includes stats
+SuperDens is a Marvel Super Heroes database, where users can get the latest information on their favourite super heroes. This includes stats, origin, biography and latest appearances in comics.
+
+Users can register to the site and keep track of heros they are most interested in. More to be added to the user experience and options.
 
 ## Collaborators
 * [Sean Desai](https://github.com/cdesai516)
