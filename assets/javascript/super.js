@@ -11,60 +11,50 @@ const superAPI = {
         var superAPI = 'http://superheroapi.com/api/10160533766455290/search/' + superInput + '/';
         $.getJSON(superAPI).then(function (response) {
 
-            for (i = 0; i < response.results.length; i++) {
-                if (response.results[i].biography.publisher == "Marvel Comics" || response.results[i].biography.publisher == "Deadpool" || response.results[i].biography.publisher == "Evil Deadpool" || response.results[i].biography.publisher == "Rune King Thor") {
+            //for (i = 0; i < response.results.length; i++) {
+                if (response.results[i].biography.publisher == "Marvel Comics" || response.results[i].biography.publisher == "Deadpool" || response.results[0].biography.publisher == "Evil Deadpool" || response.results[i].biography.publisher == "Rune King Thor") {
                     console.log(response);
                     var superHero =  {
-                        name: response.results[i].name,
-                        realName : response.results[i].biography["full-name"],
-                        birthplace: response.results[i].biography["place-of-birth"],
-                        alignment: response.results[i].biography.alignment,
-                        Int : response.results[i].powerstats.intelligence,
-                        Pwr: response.results[i].powerstats.power,
-                        Spd: response.results[i].powerstats.speed,
-                        Cbt: response.results[i].powerstats.combat
+                        name: response.results[0].name,
+                        realName : response.results[0].biography["full-name"],
+                        birthplace: response.results[0].biography["place-of-birth"],
+                        alignment: response.results[0].biography.alignment,
+                        Int : response.results[0].powerstats.intelligence,
+                        Pwr: response.results[0].powerstats.power,
+                        Spd: response.results[0].powerstats.speed,
+                        Cbt: response.results[0].powerstats.combat
                     };
                     
                     console.log(superHero)
-                    var superDiv = $("<div>");
-                    var superImg = $("<img>");
-                    var superBio = $("<p>");
-                    superBio.append("Name: " + superHero.name + "<br>Real Name: " + superHero.realName + "<br> Alignment: " + superHero.alignment + "<br> Stats: ")
                     //if conditionals for each stat starting with power
-                    if (superHero.Int == "null") {
-                        superBio.append("Power = Data Unavailable")
-                    } else {
-                        superBio.append("Power = " + superHero.Pwr)
-                    };
+                    //pwr
+                    if (superHero.Pwr == "null") {
+                        superHero.Pwr = "Data Unavailable."
+                    }
+           
                     //speed
                     if (superHero.Spd == "null") {
-                        superBio.append(", Speed = Data Unavailable.")
-                    } else {
-                        superBio.append(", Speed = " + superHero.Spd)
-                    };
+                        superHero.Spd = "Data Unavailable."
+                    }
+                        
                     //Intelligence
                     if (superHero.Int == "null") {
-                        superBio.append(", Intelligence = Data Unavailable.")
-                    } else {
-                        superBio.append(", Intelligence = " + superHero.Int)
-                    };
+                        superHero.Int = "Data Unavailable."
+                    }
+                
                     //Combat Ability
-                    if (superHero.Int == "null") {
-                        superBio.append(", Combat Ability = Data Unavailable.")
-                    } else {
-                        superBio.append(", Combat Ability = " + superHero.Cbt)
-                    };
-                    
+                    if (superHero.Cbt == "null") {
+                        superHero.Cbt = "Data Unavailable."
+                    }
+                
                     //appends the superhero API data
-                                 
-                    superDiv.attr("class", "super-bio");
-                    superDiv.append(superImg);
-                    superDiv.append(superBio);
-                    console.log(superBio);
-                    console.log(superDiv);
-                    $("#test-print").append(superDiv);
+
+                    $("#str-number").append(superHero.Pwr);
+                    $("#comb-number").append(superHero.Cbt);
+                    $("#speed-number").append(superHero.Spd);
+                    $("#int-number").append(superHero.Int);
                 };
-            };
+            //};
             //{
 
 
