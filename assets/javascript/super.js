@@ -12,7 +12,7 @@ const superAPI = {
         $.getJSON(superAPI).then(function (response) {
 
             //for (i = 0; i < response.results.length; i++) {
-                if (response.results[i].biography.publisher == "Marvel Comics" || response.results[i].biography.publisher == "Deadpool" || response.results[0].biography.publisher == "Evil Deadpool" || response.results[i].biography.publisher == "Rune King Thor") {
+                if (response.results[0].biography.publisher == "Marvel Comics" || response.results[0].biography.publisher == "Deadpool" || response.results[0].biography.publisher == "Evil Deadpool" || response.results[0].biography.publisher == "Rune King Thor") {
                     console.log(response);
                     var superHero =  {
                         name: response.results[0].name,
@@ -49,10 +49,13 @@ const superAPI = {
                 
                     //appends the superhero API data
 
-                    $("#str-number").append(superHero.Pwr);
-                    $("#comb-number").append(superHero.Cbt);
-                    $("#speed-number").append(superHero.Spd);
-                    $("#int-number").append(superHero.Int);
+                    $("#str-number").html(superHero.Pwr);
+                    $("#comb-number").html(superHero.Cbt);
+                    $("#speed-number").html(superHero.Spd);
+                    $("#int-number").html(superHero.Int);
+                    $("#name").html(superHero.realName);
+                    $("#place").html(superHero.birthplace);
+                    $("#result").html(superHero.alignment);
                 };
             //};
             //{
