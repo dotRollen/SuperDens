@@ -13,12 +13,13 @@ const marvelAPI = {
         });  
     },
     setName: function (params) {
+        // Minimum to pass name and apikey as parameters
         var directory = 'characters?';
         $.when(this.getData(directory, params))
         .done(function(response){
             var name = response.data.results[0].name;
             var id = response.data.results[0].id;
-            $("#results").html('<h1 marvel-id="' + id + '">' + name + '</h1>');
+            $("#hero").html('<h1 marvel-id="' + id + '">' + name + '</h1>');
         });
     },
     setAvatar: function (params) {
