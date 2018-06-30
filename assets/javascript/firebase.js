@@ -14,17 +14,23 @@ firebase.initializeApp(config);
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     //when user is logged in
-    $("#signInBtn").html(`
-      <a id="logout" class="waves-effect waves-light btn" href="#">Signout</a>
+    $("#signOutBtn").html(`
+      <a id="logout" class="waves-effect waves-light btn teal darken-3" href="#">Signout</a>
     `);
+    $("#signInBtn").html(`
+
+    `)
     $("#slide-out").addClass("sidenav-fixed");
     $("header, main, footer").css("padding-left", "150px");
+
+    $("#user-name").text(user.displayName);
+    $("#user-email").text(user.email);
   } else {
     //when user is logged out
-    $("main").empty();
     $("#signInBtn").html(`
-      <a id="signin" class="pulse waves-effect waves-light btn modal-trigger" href="#modal1" data-value="signin">Signin</a>
+      <a id="signin" class="pulse waves-effect waves-light btn modal-trigger teal darken-3" href="#modal1" data-value="signin">Signin</a>
     `);
+    $("#signOutBtn").html('');
     $("#slide-out").removeClass("sidenav-fixed");
     $("header, main, footer").css("padding-left", "0px");
   }
@@ -36,19 +42,17 @@ $(document).on("click", "#registerBtn", function() {
     } else {
       $("#modal1").html(`
         <div class="modal-content ">
-          <h5>Email</h5>
-          <input type="email" placeholder="email" id="email1">
-          <h5>password</h5>
-          <input type="password" placeholder="password" id="pass1">
-          <h5>Hero Name</h5>
-          <input type="text" placeholder="Hero Name" id="hero">
-          <h5>World Of Birth</h5>
-          <input type="text" placeholder="Birth World" id="world">
-        </div>
-        <div class="modal-fixed-footer">
-          <span class="btn waves-effect waves-light" type="submit" name="action" id="submitBtn2">
-              <h5>submit</h5>
-          </span>
+          <h4>Registration</h4>
+          <div class="input-field col s12">
+            <input type="email" id="email1" class="white-text autocomplete" required>
+            <label for="autocomplete-input">Email</label>
+          </div>
+          <div class="input-field col s12">
+            <input type="password" id="pass1" class="white-text autocomplete" required>
+            <label for="autocomplete-input">Password</label>
+          </div>
+          <a href="#!" class="left btn waves-effect waves-light" id="submitBtn2">Submit</a>
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text">Close</a>
         </div>
       `);
     }
@@ -90,16 +94,10 @@ document.addEventListener("DOMContentLoaded", event => {
 
     var instance = M.Modal.getInstance($("#modal1"));
     instance.close();
-    //Enter Collection Name, and DOC Name to Reference. Can Insert New to Create New on BackEnd
-    // const userRef = db.collection('ReturningUser').doc(textToSave);
-    // userRef.set({
-    //   email: textToSave,
-    //   password: textToSavePass
-    // }).then(function () {
-    //   console.log("status Saved")
-    // }).catch(function () {
-    //   console.log("hello")
-    // });
+        
+    var user = firebase.auth().currentUser;
+    console.log(user);
+    
     $("#email").val("");
     $("#pass").val("");
   });
@@ -133,5 +131,10 @@ document.addEventListener("DOMContentLoaded", event => {
       var errorMessage = error.message;
       // ...
     });
+
+    var instance = M.Modal.getInstance($("#modal1"));
+    instance.close();
   });
 });
+
+$("")

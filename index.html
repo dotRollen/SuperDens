@@ -15,88 +15,51 @@
 <div id="particles-js"></div>
    <!--STARTING TOP NAVBAR-->
    <header>
-    <div class="navbar-fixed">
-        <nav class="grey darken-4 top-nav" role="navigation">
-            <!--Search Form-->
-            <div class="nav-wrapper container">
-                <a id="logo-container" href="#" class="brand-logo">SuperDens</a>
-                <ul class="right hide-on-med-and-down">
-                    <li id="signInBtn"></li>
-                </ul>
-                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            </div>
-            <!--End Search Form-->
-        </nav>
-    </div>
+        <div class="navbar-fixed">
+            <nav class="grey darken-4 top-nav" role="navigation">
+                <!--Search Form-->
+                <div class="nav-wrapper container">
+                    <a id="logo-container" href="#" class="brand-logo">SuperDens</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li id="signInBtn"></li>
+                        <li>                   
+                            <form id="target-form">
+                                <div class="input-field">
+                                    <input id="search" type="search" required>
+                                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                    <i class="material-icons">close</i>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+
+                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                </div>
+                <!--End Search Form-->
+            </nav>
+        </div>
     <!--ENDING TOP NAVBAR-->
     <!--STARTING TOP SIDE NAVBAR-->
         <ul id="slide-out" class="sidenav">
             <li><div class="user-view">
-              <div class="background">
+                <div class="background">
                 <img src="assets/images/userbg.gif">
-              </div>
-              <a href="#user"><img class="circle" src="assets/images/user.jpg"></a>
-              <a href="#name"><span class="white-text name">John Doe</span></a>
-              <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                </div>
+                <a href="#user"><img class="circle" src="assets/images/user.jpg"></a>
+                <a href="#name"><span class="white-text name" id="user-name">John Doe</span></a>
+                <a href="#email"><span class="white-text email" id="user-email">jdandturk@gmail.com</span></a>
+                <span id="signOutBtn"></span>
             </div></li>
-            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-            <li><a href="#!">Second Link</a></li>
-            <li><div class="divider"></div></li>
-            <li><a class="subheader">Subheader</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+            <li><a href="#!">Favourite Heroes</a></li>
         </ul>
-        <!--ENDING TOP SIDE NAVBAR-->
+    <!--ENDING TOP SIDE NAVBAR-->
     </header>
     <main><div class="container">
-            <div class="section">
-                <div class="row">
-                    <div class="col s6 m6 avatar-stats">
-                        <div class="card-image circle card">
-                            
-                                <img src="https://i.pinimg.com/originals/cd/30/71/cd3071df226c7c21345b7bf91bdf648c.jpg" class="circle responsive-img">
-                                <span class="card-title" id="hero">Avatar</span>
-                            
-                            <div class="card-content">
-                                <h3>
-                                    STATS
-                                </h3>
-                                <ul>
-                                    <li id="str">STR: <span id="str-number">100</span></li>
-                                    <li id-"comb">COMBAT: <span id="comb-number">100</span>
-                                    <li id="speed">SPEED: <span id="speed-number">100</span></li>
-                                    <li id="int">Intelligence: <span id="int-number">100</span></li>
-                                    <li id="real-name">Real name: <span id="name">John Doe</span></li>
-                                    <li id="birth-place">Birth place: <span id="place">New Jersey</span></li>
-                                    <li id="alignment">Alignment: <span id="result">Good</span></li>
-                                </ul>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div  class="col s6 m6">
-                        <div class="card">
-                            <div class="card-image">
-                            </div>
-                            <div class="card-content">
-                                <h3>
-                                    BIO
-                                </h3>
-                                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because
-                                        I require little markup to use effectively.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12">
-                        <ul class="collapsible">
-                            <li>
-                                <div class="collapsible-header"><i class="material-icons">filter_drama</i>Comic Appearances</div>
-                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+        <div class="section">
+            <div class="row" id="hero-den">
             </div>
-        </div></main>
+        </div>
+    </div></main>
     <!-- End content -->
     <!-- Modals -->
     <!-- //MODAL 1 USER LOGIN -->
@@ -104,18 +67,16 @@
         <div class="modal-content">
             <h4>Signin</h4>
             <div class="input-field col s12">
-                <input type="email" id="email" class="autocomplete">
+                <input type="email" id="email" class="white-text autocomplete" required>
                 <label for="autocomplete-input">Email</label>
             </div>
             <div class="input-field col s12">
-                <input type="password" id="pass" class="autocomplete">
+                <input type="password" id="pass" class="white-text autocomplete" required>
                 <label for="autocomplete-input">Password</label>
             </div>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="left btn waves-effect waves-light" id="submitBtn">Submit</a>
+            <a href="#!" class="btn waves-effect waves-light" id="submitBtn">Submit</a>
             <a href="#!" class="btn waves-effect waves-light teal darken-4" id="registerBtn">Register</a>
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text">Close</a>
         </div>
     </div>
 <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>

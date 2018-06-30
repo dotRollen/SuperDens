@@ -32,3 +32,11 @@ li{
 #hero{
   background-color: gold; 
 }
+
+.modal {
+  padding: 10px;
+  color: cyan;
+  background-color: #212121;
+  align-content: center;
+  margin-left: auto;
+}
