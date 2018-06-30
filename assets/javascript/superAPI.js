@@ -5,72 +5,79 @@ jQuery.ajaxPrefilter(function (options) {
     }
 });
 
+// SuperHeroAPI Javascript Code
+// ----------------------------------------
 const superAPI = {
+    //Makes a call to the SuperHeroAPI and checks for succesfull
     callAPI: function (superInput) {
-        // function for superheroapi
+        // SuperHeroAPI URL, takes a string as an arguement to search the API
         var superAPI = 'http://superheroapi.com/api/10160533766455290/search/' + superInput + '/';
         $.getJSON(superAPI).then(function (response) {
-
-            //for (i = 0; i < response.results.length; i++) {
-                if (response.results[0].biography.publisher == "Marvel Comics" || response.results[0].biography.publisher == "Deadpool" || response.results[0].biography.publisher == "Evil Deadpool" || response.results[0].biography.publisher == "Rune King Thor") {
-                    var superHero =  {
-                        name: response.results[0].name,
-                        realName : response.results[0].biography["full-name"],
-                        birthplace: response.results[0].biography["place-of-birth"],
-                        alignment: response.results[0].biography.alignment,
-                        Int : response.results[0].powerstats.intelligence,
-                        Pwr: response.results[0].powerstats.power,
-                        Spd: response.results[0].powerstats.speed,
-                        Cbt: response.results[0].powerstats.combat
-                    };
-                    
-                    //if conditionals for each stat starting with power
-                    //pwr
-                    if (superHero.Pwr == "null") {
-                        superHero.Pwr = "Data Unavailable."
-                    }
-           
-                    //speed
-                    if (superHero.Spd == "null") {
-                        superHero.Spd = "Data Unavailable."
-                    }
-                        
-                    //Intelligence
-                    if (superHero.Int == "null") {
-                        superHero.Int = "Data Unavailable."
-                    }
-                
-                    //Combat Ability
-                    if (superHero.Cbt == "null") {
-                        superHero.Cbt = "Data Unavailable."
-                    }
-
-                    const ulTag = $("<ul>"),
-                        realName = $("<li>").html('Real name:' + superHero.realName),
-                        birthplace = $("<li>").html('Birth Place:' + superHero.birthplace),
-                        alignment = $("<li>").html('Alignment:' + superHero.alignment),
-                        int = $("<li>").html('Intelligent:' + superHero.Int),
-                        pwer = $("<li>").html('Power:' + superHero.Pwr),
-                        spd = $("<li>").html('Speed:' + superHero.Spd),
-                        cbt = $("<li>").html('Combat:' + superHero.Cbt);
-
-                    ulTag.append(realName).append(birthplace).append(alignment).append(int).append(pwer).append(spd).append(cbt);
-                    $("#stats-content").html("<h4>Stats</h4>").append(ulTag);
-
-                    if ($("#description").text().trim() == "") {
-                        $("#description").text("No data in Marvel API.");
-                    }
+            if (response.results[0].biography.publisher == "Marvel Comics" || response.results[0].biography.publisher == "Deadpool" || response.results[0].biography.publisher == "Evil Deadpool" || response.results[0].biography.publisher == "Rune King Thor") {
+                //If current listing returns a Marvel Comics property hero then it will continue with the object
+                var superHero =  {
+                    //Grab specific information to populate Hero Den page
+                    name: response.results[0].name,
+                    realName : response.results[0].biography["full-name"],
+                    birthplace: response.results[0].biography["place-of-birth"],
+                    alignment: response.results[0].biography.alignment,
+                    Int : response.results[0].powerstats.intelligence,
+                    Pwr: response.results[0].powerstats.power,
+                    Spd: response.results[0].powerstats.speed,
+                    Cbt: response.results[0].powerstats.combat
                 };
-            //};
-            //{
+
+                //if conditionals for each stat starting with power
+                //pwr
+                if (superHero.Pwr == "null") {
+                    superHero.Pwr = "Data Unavailable."
+                }
+
+                //speed
+                if (superHero.Spd == "null") {
+                    superHero.Spd = "Data Unavailable."
+                }
+
+                //Intelligence
+                if (superHero.Int == "null") {
+                    superHero.Int = "Data Unavailable."
+                }
+
+                //Combat Ability
+                if (superHero.Cbt == "null") {
+                    superHero.Cbt = "Data Unavailable."
+                }
+                
+                //Create HTML tags for all the data to be appended to the DOM
+                const ulTag = $("<ul>"),
+                    realName = $("<li>").html('Real name:' + superHero.realName),
+                    birthplace = $("<li>").html('Birth Place:' + superHero.birthplace),
+                    alignment = $("<li>").html('Alignment:' + superHero.alignment),
+                    int = $("<li>").html('Intelligent:' + superHero.Int),
+                    pwer = $("<li>").html('Power:' + superHero.Pwr),
+                    spd = $("<li>").html('Speed:' + superHero.Spd),
+                    cbt = $("<li>").html('Combat:' + superHero.Cbt);
+                
+                ulTag.append(realName).append(birthplace).append(alignment).append(int).append(pwer).append(spd).append(cbt);
+                $("#stats-content").html("<h4>Stats</h4>").append(ulTag);
+
+                if ($("#description").text().trim() == "") {
+                    //Check if description is empty, if it is then post no information available
+                    $("#description").text("No information available.");
+                }
+            };
         });
     },
 };
 
 const marvelAPI = {
+    //Marvel API Key and URL for creating URL request
     url: 'https://gateway.marvel.com/v1/public/',
     apikey: 'db60b2d90bd12165a42c7f7d1b0417ec',
     getData: function (directory, params) {
+        //Call marvel API and return the AJAX function when succesful
+        //requires two arguements Directory to search in on the marvel api and the parameters
+        // for the particular query
         var url = this.url;
         url += directory + params;
         return $.ajax({
@@ -82,9 +89,11 @@ const marvelAPI = {
         });  
     },
     setHero: function (params) {
-        // Minimum to pass name and apikey as parameters
+        // Grab hero information related to the BIO, photo and an ID to more specific search
+        // Minimum to pass argument param with name and apikey key value pairs in object 
         var directory = 'characters?';
         $.when(this.getData(directory, params))
+        //Passes directory and params to the getData method for API response
         .done(function(response){
             var name = response.data.results[0].name;
             var id = response.data.results[0].id;
@@ -122,7 +131,4 @@ const marvelAPI = {
     postComics: function () {
         
     },
-    postSeries: function () {
-
-    }
 } 
