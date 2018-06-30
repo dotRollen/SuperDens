@@ -1,5 +1,8 @@
-
+// General required Javascript for functionality of the app
+// --------------------------------------------------------
 $("form").submit(function (event) {
+    //When a submits a search with a keyword of a hero. This will request that objects marvelAPI and superAPI return
+    // with Hero information and append to DOM.
     event.preventDefault();
     userInput = $("#search").val().trim();
 
@@ -14,40 +17,10 @@ $("form").submit(function (event) {
     superAPI.callAPI(userInput);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, 'left');
-});
-  
-
-$(document).ready(function(){                 
-    $('input.autocomplete').autocomplete({
-    data: {
-        "Apple": null,
-        "Microsoft": null,
-        "Google": null,
-        "Gargle":null
-        }
-    });                
-});
-
-//Materialize sidenav CSS
-$(document).ready(function(){
-    $('.sidenav').sidenav();
-});
-
-//Materialize collapsible Javascript
-$(document).ready(function(){
-    $('.collapsible').collapsible();
-});
-
-//Materialize modal Javascript
-$(document).ready(function(){
-  $('.modal').modal();
-});
-
-// Particles javascript
+// Particle JS required Javascript
+// ----------------------------------------
 particlesJS("particles-js", {
+    // Particles JS settings for frontend presentation
     "particles": {
       "number": {
         "value": 82,
@@ -157,3 +130,41 @@ particlesJS("particles-js", {
     },
     "retina_detect": true
   });
+
+
+// Materialize required Javascript
+// --------------------------------------------------------
+document.addEventListener('DOMContentLoaded', function() {
+    //Materialize sidenav component initializer for proper functionality
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, 'left');
+});
+
+
+$(document).ready(function(){
+    //Materialize sidenav component CSS
+    $('.sidenav').sidenav();
+});
+  
+
+$(document).ready(function(){
+    //Materialize autocomplete component initializer for proper functionality
+    $('input.autocomplete').autocomplete({
+    data: {
+        "Apple": null,
+        "Microsoft": null,
+        "Google": null,
+        "Gargle":null
+        }
+    });                
+});
+
+$(document).ready(function(){
+    //Materialize collapsible  component initializer for proper functionality
+    $('.collapsible').collapsible();
+});
+
+$(document).ready(function(){
+  //Materialize modal  component initializer for proper functionality
+  $('.modal').modal();
+});
