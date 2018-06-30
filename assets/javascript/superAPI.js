@@ -117,16 +117,6 @@ const marvelAPI = {
             bioDiv.append(card.append(cardContent.html("<h2>Bio</h2>").append(spanTitle).append(bio)));
             $("#hero-den").append(bioDiv);
             
-            $("#hero-den").append(`
-            <div class="col s12">
-                <ul class="collapsible">
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">filter_drama</i>Comic Appearances</div>
-                        <div class="collapsible-body"><span>[Marvel API Comics]</span></div>
-                    </li>
-                </ul>
-            </div>
-            `);
         });
     },
     postComics: function () {
