@@ -8,3 +8,11 @@
         padding-left: 0;
       }
     }
+    h3{
+      font-family: 'Open Sans', sans-serif;
+  }
+
+  .card-title{
+    color: black; 
+
+  }
